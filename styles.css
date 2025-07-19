@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kiran Babu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cta-button {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+
+        .glass-section:hover {
+            transform: scale(1.02);
+        }
+
+        .skills {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-link {
+            color: #00ffcc;
+            text-decoration: none;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #scroll-top:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="particles"></div>
+        <div class="container">
+            <h1>Kiran Babu</h1>
+            <h2>Full Stack Developer</h2>
+            <p>Crafting digital experiences with cutting-edge web technologies.</p>
+            <a href="#projects" class="cta-button" id="view-work-btn">View My Work</a>
+        </div>
+    </header>
+
+    <section id="about" class="glass-section">
+        <h2>About Me</h2>
+        <p>I'm a passionate developer specializing in building dynamic web applications. I love to solve complex problems and create user-friendly interfaces.</p>
+        <h3>Skills</h3>
+        <ul class="skills">
+            <li>Node.js</li>
+            <li>Git</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>TypeScript</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="glass-section">
+        <h2>Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card" data-project-id="1">
+                <h3>ShopEase</h3>
+                <p>An end-to-end e-commerce platform for online shopping, supporting user authentication, product management, and order tracking. Includes an admin dashboard, shopping cart, and secure payments using Stripe API.</p>
+                <p><strong>Tech:</strong> React, Node.js, Express, MongoDB, Stripe API</p>
+                <a href="#" class="project-link">View Project</a>
+                <div class="glow-effect"></div>
+            </div>
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio to showcase my work, technical skills, and contact information with a modern dark-mode UI and interactive animations.</p>
+                <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+                <a href="#" class="project-link">View Project</a>
+                <div class="glow-effect"></div>
+            </div>
+
+            <div class="project-card">
+                <h3>Task Manager</h3>
+                <p>A web application for managing tasks with features like user authentication, task categorization, and deadline reminders.</p>
+                <p><strong>Tech:</strong> Vue.js, Firebase, CSS</p>
+                <a href="#" class="project-link">View Project</a>
+                <div class="glow-effect"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="glass-section">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </section>
+
+    <button id="scroll-top" class="hidden">▲</button>
+    <footer>
+        <p>&copy; 2023 Kiran Babu. All rights reserved.</p>
+    </footer>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Project card hover effects
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.glow-effect').style.opacity = '1';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.glow-effect').style.opacity = '0';
+            });
+        });
+
+        // Contact form validation
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = this.querySelector('input[type="text"]').value.trim();
+                const email = this.querySelector('input[type="email"]').value.trim();
+                const message = this.querySelector('textarea').value.trim();
+                
+                if (name && email && message) {
+                    alert('Thank you for your message!');
+                    this.reset();
+                } else {
+                    alert('Please fill all fields');
+                }
+            });
+        }
+
+        // Scroll-to-top button
+        const scrollTopBtn = document.getElementById('scroll-top');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.remove('hidden');
+                } else {
+                    scrollTopBtn.classList.add('hidden');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>
